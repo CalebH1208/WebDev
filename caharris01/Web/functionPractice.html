@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script>
+    function average3(v1, v2, v3) {
+      var x = (v1 + v2 + v3) / 3;
+      return x
+    }
+
+    function build(x, y) {
+      var course = x + " " + y;
+      return course;
+    }
+
+    function sumDouble(x, y) {
+      var z
+      if (x == y) {
+        z = (x + y) * 2
+      }
+      else {
+        z = x + y
+      }
+      return z;
+    }
+
+    function annoy(x) {
+      var x
+      if (x == 1) {
+        alert("Surprise")
+      }
+      else if (x == 2) {
+        alert("Surprise")
+        alert("Surprise")
+      }
+      else if (x == 3) {
+        alert("Surprise")
+        alert("Surprise")
+        alert("Surprise")
+      }
+      else {
+        alert("eRRoR")
+      }
+      return;
+    }
+    function getName(){
+      var x = prompt("what is your first name?")
+      var y = prompt("what is your last name?")
+      var z = x +" "+ y
+      return z;
+    }
+    function cf(){
+      var x = Math.random()
+      if(x>0.5){
+        var z = 'Heads'
+      }
+      else{
+        var z = 'Tails'
+      }
+      return z;
+    }
+    function dice(){
+      var x = Math.round((Math.random()*5)+1)
+      return x;
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <h3>Function 1: average3</h3>
+  <button onclick="alert(average3(10, 20, 30))">Average of 10, 20, and 30</button>
+  <button onclick="alert(average3(-1, 1, 5))">Average of -1, 1, and 5</button>
+  <button onclick="alert(average3(1.5, 3.5, 94.0))">Average of 1.5, 3.5, and 94.0</button>
+  <h3>Function 2: build</h3>
+  <button onclick="alert(build('Tech', 20))">Tech 20</button>
+  <button onclick="alert(build('Algebra', 2))">Algebra 2</button>
+  <button onclick="alert(build('Art', 30))">Art 30</button>
+  <h3>Function 3: sumDouble</h3>
+  <button onclick="alert(sumDouble(3, 4))">SumDouble of 3 and 4</button>
+  <button onclick="alert(sumDouble(5, 5))">SumDouble of 5 and 5</button>
+  <button onclick="alert(sumDouble(-10, -10))">SumDouble of -10 and -10</button>
+  <h3>Function 4: annoy</h3>
+  <button onclick="annoy(1)">Annoy me once</button>
+  <button onclick="annoy(2)">Annoy me twice</button>
+  <button onclick="annoy(3)">Annoy me thrice</button>
+  <button onclick="annoy(4)">This is too annoying</button>
+  <button onclick="annoy('cow')">This is just wrong</button>
+<h3>Function 5: getName</h3>
+<button onclick="alert(getName())">Get a name</button>
+<h3>Function 6: coin flip</h3>
+<button onclick="alert(cf())">Flip a Coin</button>
+<h3>Function 6: dice</h3>
+<button onclick="alert(dice())">roll a dice</button>
+</body>
+
+</html>

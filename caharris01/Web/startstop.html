@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>auto-move</title>
+<style>
+div#block{
+    position: fixed; 
+    height: 25px; width: 25px; 
+    background-color: red;
+}
+</style>
+<script src='library.js'></script>
+<script>
+// global variable to keep track of the last key that was pressed
+var key = -1;
+
+function keys() {
+    // get key code and store in global variable - that's all
+    key = event.keyCode;
+}
+
+function move() {
+    // get the current position
+    var y = getCSS ("block", "top");
+    y = parseInt (y);
+     var x = getCSS ("block", "left");
+    x = parseInt(x)
+    
+    // check global variable to see which way to move
+    if (key == 40) {
+	    y = y + 1;
+    }
+    else if(key == 38){
+    y = y-1}
+    else if(key == 39){
+      x = x+1
+    }
+    else if(key == 37){
+      x = x-1
+    }
+    // update to new location
+	setCSS ("block", "top", y + "px");
+	setCSS ("block", "left", x + "px");
+}   
+function stop(){
+  sk = event.keyCode;
+  if (sk = key){
+  key = -1
+}}
+var timerNum = setInterval ("move()", 10);
+</script>
+</head>
+<body onkeydown="keys()" onkeyup="stop()">
+<div>Press an arrow key to move the object</div>
+<div id="block" style=" top: 100px; left: 100px;">Hi!</div>
+</body>
+</html>

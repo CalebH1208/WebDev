@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AHHHHHHHHHHHHHH</title>
+    <style>
+        body{
+            background-color: rosybrown;
+        }
+        th{
+            border-style: solid;
+            border-width: 2px;
+        }
+        td{
+            border-style: solid;
+            border-width: 2px;
+            padding:10px;
+        }
+        table{
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+<header>CAN bus:</header><br>
+<table>
+    <tr>
+        <th>System:</th>
+        <th>Value</th>
+        <th>Unit</th>
+    </tr>
+    <tr>
+        <td>Battery Life</td>
+        <td id="bat">100</td>
+        <td>KiloWatts</td>
+    </tr>
+    <tr>
+        <td>vibes</td>
+        <td id="vib">high</td>
+        <td>Pascals</td>
+    </tr>
+</table>
+<p id="cnt">0</p>
+<button onclick="cnt('cnt')">Click me</button>
+<button onclick="read()">randomize</button>
+<script>
+
+
+    function UPdate(){
+
+    }
+    function cnt(a){
+        var x = parseInt(document.getElementById(a).innerHTML)
+        x=x+1
+        document.getElementById(a).innerHTML = x;
+
+    }
+    function read(){
+
+        document.getElementById("bat").innerHTML = "math.rad(100);"
+        document.getElementById("vib").innerHTML = math.rad(50);
+        console.log(1);
+
+    }
+
+
+
+</script>
+</body>
+</html>

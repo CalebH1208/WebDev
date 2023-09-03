@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MARIO TIME</title>
+  <style>
+    div#mario {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+
+    }
+
+    #bg {
+      position: fixed;
+      z-index: -10;
+
+    }
+
+    #blocks {
+      position: fixed;
+      z-index: -4;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    blk {
+      margin: 0px;
+    }
+
+    #goomba {
+      position: fixed;
+
+    }
+
+    #floor {
+      position: fixed;
+      z-index: -2;
+    }
+
+    #flag {
+      position: fixed;
+      z-index: -2;
+    }
+
+    #pipes {
+      position: fixed;
+      z-index: 1
+    }
+
+    #plant {
+      position: fixed;
+      z-index: -3
+    }
+
+    #myCanvas {
+      position: fixed;
+      margin-left: -10px;
+      z-index: 1000;
+      width: 101vw;
+      height: 101vw;
+    }
+
+    pipe {
+      background-color: red;
+    }
+
+    tr {
+      width: 100%;
+      background-color: black;
+      color: fuchsia;
+      border: 2px double fuchsia;
+    }
+
+    table {
+      position: fixed;
+      width: 90vw;
+      left: 100px;
+      top: 900px;
+    }
+  </style>
+  <script src='library.js'></script>
+  <script>
+    // global variable to keep track of the last key that was pressed
+    var key = -1;
+    var keyx = -1
+    var keyy = -1
+    var t = 1
+    var v = 15
+    var z = 4
+    var gs1 = 2
+    var lives = 3
+    var pt = 0
+var win = false
+    function keys() {
+      // get key code and store in global variable - that's all
+      key = event.keyCode;
+      if(win == false){
+      if (key == 37) {
+        keyx = 37
+
+      }
+      else if (key == 39) {
+        keyx = 39
+
+      }
+      else if (key == 40) {
+        keyy = 40
+      }
+      else if (key == 38) {
+        keyy = 38
+      }
+      else {
+        key = -1
+      }
+      console.log
+}
+else{
+alert("YOU ALREADY WON STOP TRYING TO PLAY")
+      }
+    }
+
+    function move1() {
+
+      var x = getCSS("bg", "left");
+      x = parseInt(x);
+      var b = getCSS("blocks", "left")
+      b = parseInt(b);
+      var f = getCSS("floor", "left")
+      f = parseInt(f);
+      var p = getCSS("pipes", "left")
+      p = parseInt(p);
+      var g = getCSS("goomba", "left")
+      g = parseInt(g);
+
+
+      if (keyx == 37) {
+        if (collisionx("mario", "blk") == "right") {
+          console.log(5)
+        }
+        else if (collisionx("mario", "pipes") == "right") {
+
+        }
+        else if (collisionx("mario", "blk2") == "right") {
+
+        }
+        else if (collisionx("mario", "blk3") == "right") {
+
+        }
+        else if (collisionx("mario", "blk4") == "right") {
+
+        }
+        else if (collisionx("mario", "blk6") == "right") {
+
+        }
+        else if (collisionx("mario", "blk5") == "right") {
+
+        }
+        else if (collisionx("mario", "blk7") == "right") {
+
+        }
+        else if (collisionx("mario", "blk8") == "right") {
+
+        }
+        else if (collisionx("mario", "blk9") == "right") {
+
+        }
+        else if (collisionx("mario", "blk10") == "right") {
+
+        }
+        else if (collision("mario", "flag") == true) {
+        alert("you Win")
+        setCSS("mario", "left", "600px")
+        win == true
+        keyx=-1
+        }
+
+       
+
+        
+        
+        else {
+          x = x + t;
+          b = b + z
+          f = f + z
+          p = p + z
+          g = g + z
+          changesrc("Marioimg", "mariorun2.png");
+        }
+
+      }
+      else if (keyx == 39) {
+        if (collisionx("mario", "blk") == "left") {
+          console.log(23)
+        }
+        else if (collisionx("mario", "pipes") == "left") {
+          console.log(23)
+        }
+        else if (collisionx("mario", "blk2") == "left") {
+
+        }
+        else if (collisionx("mario", "blk3") == "left") {
+
+        }
+        else if (collisionx("mario", "blk4") == "left") {
+
+        }
+        else if (collisionx("mario", "blk5") == "left") {
+
+        }
+        else if (collisionx("mario", "blk6") == "left") {
+
+        }
+        else if (collisionx("mario", "blk7") == "left") {
+
+        }
+        else if (collisionx("mario", "blk8") == "left") {
+
+        }
+        else if (collisionx("mario", "blk9") == "left") {
+
+        }
+        else if (collisionx("mario", "blk10") == "left") {
+
+        }
+
+    
+        
+        else {
+          x = x - t;
+          b = b - z
+          f = f - z
+          p = p - z
+          g = g - z
+          changesrc("Marioimg", "mariorun.png");
+        }
+
+      }
+
+      if (x < -1710) {
+        x = -1710
+        setCSS("bg", "left", x + "px");
+
+      }
+      else if (x > 40) {
+        x = 40
+        setCSS("bg", "left", x + "px");
+      }
+      else if (x <= 400 && x >= -2110) {
+        setCSS("bg", "left", x + "px");
+        setCSS("blocks", "left", 0 + "px");
+        setCSS("blocks", "left", b + "px");
+        setCSS("floor", "left", f + "px");
+        setCSS("flag", "left", f + 3000 + "px");
+        setCSS("pipes", "left", p + "px");
+        setCSS("plant", "left", p + 5 + "px");
+        setCSS("goomba", "left", g + gs1 + "px");
+      }
+
+    }
+
+    function stop() {
+      upkey = event.keyCode;
+      if (upkey == 37 || upkey == 39)
+        keyx = -1;
+      changesrc("Marioimg", "mariofront.png");
+    }
+
+
+
+    function movey() {
+      var y = parseInt(getCSS("mario", "top"))
+
+      if (keyy == 38 && v == 15) {
+        v = -15
+        keyy = -1
+      }
+      else if (v > 15) {
+        v = 15
+      }
+      else {
+        v = v + 1
+      }
+
+
+
+      if (collisiony2("mario", "blk") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk") == "above t") {
+
+        y = parseInt(getCSS("blk", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "pipes") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "pipes") == "above t") {
+
+        y = parseInt(getCSS("pipes", "top")) - 50
+        v = 0
+      }
+      else if (collisiony2("mario", "blk2") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk2") == "above t") {
+
+        y = parseInt(getCSS("blk2", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk2") == "below") {
+        y = parseInt(getCSS("blk2", "top")) + 65
+        v = 0
+      }
+      else if (collisiony2("mario", "blk4") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk4") == "above t") {
+
+        y = parseInt(getCSS("blk4", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk4") == "below") {
+        y = parseInt(getCSS("blk4", "top")) + 65
+        v = 0
+      }
+
+      else if (collisiony2("mario", "blk3") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk3") == "above t") {
+
+        y = parseInt(getCSS("blk3", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk3") == "below") {
+        y = parseInt(getCSS("blk3", "top")) + 65
+        v = 0
+      }
+      else if (collisiony2("mario", "blk5") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk5") == "above t") {
+
+        y = parseInt(getCSS("blk5", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk5") == "below") {
+        y = parseInt(getCSS("blk5", "top")) + 65
+        v = 0
+      }
+      else if (collisiony2("mario", "blk6") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk6") == "above t") {
+
+        y = parseInt(getCSS("blk6", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk6") == "below") {
+        y = parseInt(getCSS("blk6", "top")) + 65
+        v = 0
+      }
+      else if (collisiony2("mario", "blk7") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk7") == "above t") {
+
+        y = parseInt(getCSS("blk7", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk7") == "below") {
+        y = parseInt(getCSS("blk7", "top")) + 65
+        v = 0
+      }
+
+      else if (collisiony2("mario", "blk8") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk8") == "above t") {
+
+        y = parseInt(getCSS("blk8", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk8") == "below") {
+        y = parseInt(getCSS("blk8", "top")) + 65
+        v = 0
+      }
+
+      else if (collisiony2("mario", "blk9") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk9") == "above t") {
+
+        y = parseInt(getCSS("blk9", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk9") == "below") {
+        y = parseInt(getCSS("blk9", "top")) + 65
+        v = 0
+      }
+
+      else if (collisiony2("mario", "blk10") == "above t" && keyy == 38) {
+        v = -15
+        keyy = -1
+        y = y + v
+      }
+      else if (collisiony2("mario", "blk10") == "above t") {
+
+        y = parseInt(getCSS("blk10", "top")) - 42
+        v = 0
+      }
+      else if (collisiony2("mario", "blk10") == "below") {
+        y = parseInt(getCSS("blk10", "top")) + 65
+        v = 0
+      }
+
+
+
+      else if (collisiony2("mario", "goomba") == "above t") {
+        changesrc("goo", "squishedgoomba.png")
+
+
+        v = -8
+        var timerkill = setInterval("kill('goomba')", 500)
+        gs1 = 0
+      }
+      else {
+        y = y + v
+      }
+
+
+
+      if (y > 750) {
+        y = 750
+        setCSS("mario", "top", y + "px")
+      }
+      else if (y < 50) {
+        y = 50
+        setCSS("mario", "top", y + "px")
+      }
+      else {
+        setCSS("mario", "top", y + "px")
+      }
+
+    }
+
+    function changesrc(id, newText) {
+      var e = document.getElementById(id);
+      if (e == null) {
+        console.log("There is no element with an id of " + id);
+        return;
+      }
+      e.src = newText;
+    }
+
+
+
+
+    function plant() {
+
+      if (pt < 105) {
+        setCSS("plant", "top", (730 - pt) + "px")
+        pt = pt + 1
+
+      }
+      else if (pt > 605 && pt < 710) {
+        setCSS("plant", "top", 730 - (710 - pt) + "px")
+        pt = pt + 1
+      }
+      else if (pt == 1210) {
+        pt = 0
+      }
+      else {
+        pt = pt + 1
+      }
+      if (collision("mario", "plant") == true) {
+
+        death()
+
+      }
+    }
+
+    function gumbmove() {
+      var gumb = parseInt(getCSS("goomba", "left"))
+
+      if (collisionx("goomba", "blk") == "left" || collisionx("goomba", "pipes") == "left") {
+        gs1 = -1
+        changesrc("goo", "goombaleft.png")
+      }
+      else if (collisionx("goomba", "blk") == "right" || collisionx("goomba", "pipes") == "right") {
+        changesrc("goo", "goomba.png")
+        gs1 = 1
+      }
+      gumb = gumb + gs1
+      setCSS("goomba", "left", gumb + "px");
+     
+        if (collision("mario", "goomba") == true) {
+      death()
+        }
+        
+      }
+    
+
+    function kill(gn) {
+      setCSS(gn, "top", 500 + "px");
+
+    }
+    function death(){
+          setCSS("bg", "left", -20 + "px");
+          setCSS("mario", "top", 200 + "px")
+          setCSS("blocks", "left", 0 + "px");
+          setCSS("floor", "left", -180 + "px");
+          setCSS("flag", "left", 500 + 3000 + "px");
+          setCSS("pipes", "left", 1000 + "px");
+          setCSS("plant", "left", 1000 + 5 + "px");
+          setCSS("goomba", "left", 500 + "px");
+          setCSS("goomba", "top", 750 + "px");
+          gs1 = 1
+          x = parseInt(getCSS("bg", "left"))
+          b = parseInt(getCSS("blocks", "left"))
+          f = parseInt(getCSS("floor", "left"))
+          p = parseInt(getCSS("pipes", "left"))
+          g = parseInt(getCSS("goomba", "left"))
+          keyx = -1
+          lives = lives - 1
+          if (lives == 0) {
+            alert("GAME OVER")
+            changesrc("bgi", "FakeNihar.JPG")
+          }
+          else {
+            alert("You lost a life")
+
+            change("lives", "lives: " + lives)
+          }
+    }
+
+    var timerNum = setInterval("move1()", 10);
+    var timerNumy = setInterval("movey()", 15);
+    var timerNumgumb = setInterval("gumbmove()", 20);
+    var timernumplant = setInterval("plant()", 10)
+  </script>
+</head>
+
+<body onkeydown="keys()" onkeyup="stop()">
+  <div id="bg" style="top:80px; left: -20px;"> <img id=bgi src="Hills2.jpg"></div>
+  <div id="mario" style=" top: 200px; left: 400px;"><img id="Marioimg" src='mariofront.png' style='width:50px; height:50px'></div>
+
+  <div id=blocks style="left:0px; height:1000px; width:10000px;">
+    <img id=blk src='marioblock.png' style='width:50px; height:50px; top:742px; left:600px; position:absolute;'>
+    
+    <img id=blk2 src='marioblock.png' style='width:50px; height:50px;top:650px; left:700px; position: absolute;'>
+    
+    <img id=blk3 src='marioblock.png' style='width:50px; height:50px;top:600px; left:1200px; position: absolute;'>
+    
+    <img id=blk4 src='marioblock.png' style='width:50px; height:50px;top:600px; left:1150px; position: absolute;'>
+    
+    <img id=blk5 src='marioblock.png' style='width:50px; height:50px;top:600px; left:1250px; position: absolute;'>
+    
+    <img id=blk6 src='marioblock.png' style='width:50px; height:50px;top:600px; left:1350px; position: absolute;'>
+    
+    <img id=blk7 src='marioblock.png' style='width:50px; height:50px;top:600px; left:1450px; position: absolute;'>
+    
+    <img id=blk8 src='marioblock.png' style='width:50px; height:50px;top:650px; left:2650px; position: absolute;'>
+    
+    <img id=blk9 src='marioblock.png' style='width:50px; height:50px;top:550px; left:2700px; position: absolute;'>
+    
+    <img id=blk10 src='marioblock.png' style='width:50px; height:50px;top:500px; left:2800px; position: absolute;'>
+  </div>
+  <div id=pipes style="top:725px; left:1000px;">
+    <img class=pip src='pip.png' style='width:75px; height:75px;'>
+  </div>
+  <div id=plant style="top:730px; left:1000px;">
+
+    <img class=plnt src='plant2.png' style='width:62px; height:100px;'>
+  </div>
+  <div id=floor style="top:800px; left:-180px;">
+    <img class=ground src='ground2.jpg'>
+  </div>
+  <div id=flag style="top:400px; left:500px;">
+    <img class=ground src='flag.png'>
+  </div>
+  <div id=goomba style="top:750px; left:750px;">
+    <img id=goo class=goom src='goomba.png' style='width:50px; height:50px;'>
+  </div>
+
+  <canvas id="myCanvas"></canvas>
+
+  <script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 10, 300);
+    ctx.fillRect(289, 0, 10, 300);
+  </script>
+  <table>
+    <tr>
+      <td id=lives>lives: 3</td>
+      <td>Coins: 0</td>
+
+    </tr>
+  </table>
+</body>
+
+</html>

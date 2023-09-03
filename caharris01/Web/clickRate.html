@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script src="library.js"></script>
+  <script>
+    function countUp() {
+      var c = get("count");
+      c = parseInt(c);
+      c = c + 1;
+      if(c==1){
+        setTimeout("report()",2000);
+        
+      }
+      change("count", c);
+    }
+    function report(){
+       var c = get("count");
+      c = parseInt(c);
+      var rate = c/2
+      if(rate<5){
+        alert("you clicked "+ rate+ " clicks per second. are you alive")
+      }
+      else if(rate>5 && rate<10){
+      alert("you clicked "+ rate+ " clicks per second. You are normal ")
+      }
+      else{
+        alert("you clicked "+ rate+ " clicks per second. Stop taking adderal")
+      }
+      c = 0
+      change("count", c);
+    }
+  </script>
+
+</head>
+
+<body>
+  Count: <span id="count">0</span><br>
+  <button onclick="countUp()">Count</button>
+
+</body>
+
+</html>

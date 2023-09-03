@@ -1,0 +1,251 @@
+<script>
+        var prevMsg='';
+        window.onerror=function(message, source, lineno, colno, error) {
+            let con = parent.parent.document.getElementById("consoleDisp");
+            if (con.querySelectorAll("div").length > 100) con.removeChild(con.firstElementChild);
+            
+            const newDiv = document.createElement("div");
+            if (lineno) { // python errors do not have a linenumber
+              newDiv.innerHTML = "Error on line " + (lineno-31)+": "+message;
+              con.appendChild(newDiv);
+            }
+            else if (prevMsg != message) {  // prevent duplicate messages
+              prevMsg = message;
+              newDiv.innerHTML = message
+              con.appendChild(newDiv);
+            }
+            newDiv.style.color="red";
+            con.scrollTop = con.scrollHeight;
+        };
+        console.log = function() {
+            let con = parent.parent.document.getElementById("consoleDisp");
+            if (con.querySelectorAll("div").length > 100) con.removeChild(con.firstElementChild);
+            const newDiv = document.createElement("div");
+            if (typeof arguments[0] === 'object') 
+              newDiv.innerHTML = JSON.stringify(arguments[0], null, 4);
+            else
+              for (let i in arguments) newDiv.innerHTML += arguments[i];
+            con.appendChild(newDiv);
+            con.scrollTop = con.scrollHeight;     
+        };
+        </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dear glorious leader NIHAR</title>
+  <style>
+    body {
+      background-color: black;
+      user-select: none;
+      margin-left:5vw;
+    }
+
+    div#container {
+      position: relative;
+      height: 70vw;
+      width: 90vw;
+      background-color: purple;
+      background-image: url(nihar2.PNG);
+      background-size: cover;
+    }
+
+    #button {
+      position: absolute;
+      width: 10vw;
+      height: 10vw;
+    }
+
+    table {
+      width: 90vw;
+      background-color: black;
+      color: fuchsia;
+      
+    }
+
+    #time {
+      text-align: right;
+
+    }
+
+    #bttn {
+      background-color: black;
+      color: fuchsia;
+      width: 90vw;
+      border: 0px black double;
+    }
+
+    #all {
+      border: 3px fuchsia double;
+      width: 90vw;
+    }
+
+    td{
+      width: 45vw;
+    }
+    
+    #ew {
+      height: 50px;
+      width: 50px;
+      font-size: x-small;
+      color:DarkSlateGrey;
+      background-color:black;
+      border: 6px double black;
+    }
+    #third{
+      background-color:black;
+      border:1px double black;
+    }
+    #ew:hover{
+      background-color: lime;
+      color: fuchsia;
+      border: 6px double purple;
+      height: 100%;
+      width: 100%;
+      font-size: x-large;
+      transition:10s;
+    }
+#third:hover{
+  
+  background-color:coral;
+  transition:2s;
+  transition:10s;
+}
+#ew2{
+  border: 1px solid black;
+}
+  </style>
+  <script src="library.js"></script>
+  <script>
+    var i
+    var dirX = 1
+    var dirY = 1
+    var TN = null
+    var scr = 0
+    var tmr = null
+    var time = 10
+    var TN2 = null
+    var speed = 50
+var image = 'url("nihar2.PNG")'
+    function start() {
+      if (TN == null) {
+        TN = setInterval("move()", 50);
+        tmr = setInterval("timer()", 1000)
+        change("score","Score: 0" )
+      }
+      console.log(TN)
+    }
+
+    function stop() {
+      clearInterval(TN)
+      clearInterval(tmr)
+      TN = null
+
+    }
+
+    function move() {
+      let x = parseInt(getCSS("button", "left"));
+      x = x + dirX;
+      if (x > 79) {
+        dirX = -1 + Math.random()
+      }
+      else if (x < 1) {
+        dirX = 1
+      }
+      setCSS("button", "left", x + "vw");
+      let y = parseInt(getCSS("button", "top"))
+      y = y + dirY
+      if (y > 59) {
+        dirY = -1
+      }
+      else if (y < 1) {
+        dirY = 1
+      }
+      setCSS("button", "top", y + "vw")
+
+
+    }
+
+    function timer() {
+
+      if (time > 0) {
+        time = time - 1
+        change("time", "Time Left: " + time)
+      }
+      else if (time == 0) {
+        alert("your timer is over")
+
+        time = -1
+        clearInterval(TN)
+        clearInterval(tmr)
+        clearInterval(TN2)
+        TN = null
+        scr=0
+        time = 10
+        change("time", "Time Left: 10")
+        speed = 50
+      }
+
+
+    }
+
+    function count() {
+      if (TN == null) {
+        alert("STOPPPPPPP CHEATING NIHAR!!!!")
+      }
+      else {
+        scr = scr + 1
+        m = "Score: " + scr;
+        change("score", "Score: " + scr)
+        clearInterval(TN)
+        speed = speed * 0.9
+        TN = setInterval("move()", speed);
+        
+        console.log(speed)
+      }
+      
+    }
+    function peter(){
+      console.log(getCSS("container","background-image"))
+      if(image =='url("nihar2.PNG")'){
+        
+        image = 'url("peter.PNG")'
+        setCSS("container","background-image", image)
+      }
+      else{
+        image = 'url("nihar2.PNG")'
+        setCSS("container","background-image",image)
+        
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id=all>
+    <table>
+      <tr>
+        <td>
+          <div id=score>
+            Score: 0
+          </div>
+        </td>
+        <td>
+          <div id="time">Time Left: 10</div>
+        </td>
+      </tr>
+    </table>
+
+
+    <div id="container">
+      <img id="button" src="nihar.png" onmousedown="count()" style="top: 40vw; left: 40vw; width:10vw;height:10vw; " alt="nihar but smol" draggable=false>
+    </div>
+    <button id=bttn onclick="start()">start</button>
+  </div>
+<table id=third>
+  <tr><td id=ew2><button id=ew onclick="peter()">4</button></td></tr>
+</table>
+</body>
+
+</html>

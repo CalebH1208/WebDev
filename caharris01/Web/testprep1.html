@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script>
+    function range(num) {
+      if (num >= 0) {
+        if (num <= 100) {
+          return "valid";
+
+        }
+        else {
+          return "invalid";
+        }
+      }
+      else {
+        return "invalid";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <script>
+    var x = parseFloat(prompt("gibe nummby"))
+    var y = range(x)
+    document.write(y)
+  </script>
+
+</body>
+
+</html>

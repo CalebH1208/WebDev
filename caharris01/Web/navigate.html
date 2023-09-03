@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>auto-move</title>
+  <style>
+    div#block {
+      position: fixed;
+      height: 50px;
+      width: 100px;
+
+      background-image: url("horse.png");
+      background-size: cover;
+      position: ;
+    }
+
+    #container {
+      background-color: burlywood;
+      height: 300px;
+      width: 450px;
+      position: relative;
+    }
+  </style>
+  <script src='library.js'></script>
+  <script>
+    // global variable to keep track of the last key that was pressed
+    var key = -1;
+    var t = 1
+var v = 10
+    function keys() {
+      // get key code and store in global variable - that's all
+      key = event.keyCode;
+    }
+
+    function move() {
+      // get the current position
+      var y = getCSS("block", "top");
+      y = parseInt(y);
+      var x = getCSS("block", "left");
+      x = parseInt(x)
+
+      // check global variable to see which way to move
+      if (key == 40) {
+        y = y + t;
+      }
+      else if (key == 38) {
+        y = y - t
+      }
+      else if (key == 39) {
+        x = x + t
+      }
+      else if (key == 37) {
+        x = x - t
+      }
+      // update to new location
+      if (y > 10 && y < 259) {
+        setCSS("block", "top", y + "px");
+        
+      }
+      if (x > 10 && x < 360)
+        setCSS("block", "left", x + "px");
+    }
+
+    function stop() {
+      sk = event.keyCode;
+      if (sk = key) {
+        key = -1
+      }
+    }
+    function speedup(){
+    t = t+100
+      console.log(t)
+      
+    }
+    function slowdown(){
+      if(t >1){
+        t = t-1
+        console.log(t)
+        v = 10
+      }else{
+        v =v+10
+        console.log(v)
+      }
+      
+    }
+    var timerNum = setInterval("move()", v);
+  </script>
+</head>
+
+<body onkeydown="keys()" onkeyup="stop()">
+  <div id="container">Press an arrow key to move the object</div>
+  <div id="block" style=" top: 100px; left: 100px;"></div>
+  <button onclick="speedup()">INCREASE SPEED</button>
+  <button onclick="slowdown()">UNINCREASE SPEED</button>
+</body>
+
+</html>

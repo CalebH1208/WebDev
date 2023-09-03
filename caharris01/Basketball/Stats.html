@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>P2P JV Stats</title>
+  <style>
+    body {
+      background-color: lightblue;
+      color: black;
+    }
+
+    span.base {
+      display: none;
+    }
+
+    th {
+      padding-left: 20px;
+      background-color: lightblue;
+      padding-right: 20px;
+    }
+
+    table {
+      background-color: rgb(50, 50, 50);
+      margin-left: 10vw;
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: lightblue;
+      border: 3px solid blue;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 0px;
+      color: black;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-family: web;
+    }
+    img{
+      height:20vw;
+      width:90vw
+      
+    }
+  </style>
+</head>
+
+<body>
+<center><img src="https://www.peaktopeak.org/cms/lib/CO02222769/Centricity/Template/GlobalAssets/images///logos/P2P%20logo%203%20-%20for%20website%20halo-01-01.png" alt="peaktopeak logo"></center>
+
+  <span class=base>
+    Charlie Custard:
+    <br>
+    <script>
+      var custard;
+      var custardmin;
+      custardmin = 153;
+      var custardpts;
+      custardpts = 27;
+      document.write("Points per minute played: " + Math.round((custardpts / custardmin) * 1000) / 1000)
+      var custardstl
+      custardstl = 10;
+      document.write("<br>Steals per minute played: " + Math.round((custardstl / custardmin) * 1000) / 1000)
+      var custardblk
+      custardblk = 1;
+      document.write("<br>blocks per minute played: " + Math.round((custardblk / custardmin) * 1000) / 1000)
+      var custardTO
+      custardTO = 18;
+      document.write("<br>Turnovers per minute played: " + Math.round((custardTO / custardmin) * 1000) / 1000)
+      var custardPF
+      custardPF = 10;
+      document.write("<br>Fouls per minute played: " + Math.round((custardPF / custardmin) * 1000) / 1000)
+      document.write("<br>Steals per turnover: " + Math.round((custardstl / custardTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Diego Carrier:<br>
+    <script>
+      var carriermin;
+      carriermin = 185;
+      var carrierpts;
+      carrierpts = 65;
+      document.write("points per minute played: " + Math.round((carrierpts / carriermin) * 1000) / 1000)
+      var carrierstl
+      carrierstl = 20;
+      document.write("<br>steals per minute played: " + Math.round((carrierstl / carriermin) * 1000) / 1000)
+      var carrierblk
+      carrierblk = 1;
+      document.write("<br>blocks per minute played: " + Math.round((carrierblk / carriermin) * 1000) / 1000)
+      var carrierTO
+      carrierTO = 28;
+      document.write("<br>Turnovers per minute played: " + Math.round((carrierTO / carriermin) * 1000) / 1000)
+      var carrierPF
+      carrierPF = 25;
+      document.write("<br>fouls per minute played: " + Math.round((carrierPF / carriermin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((carrierstl / carrierTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    AJ Greene:<br>
+    <script>
+      var greenemin;
+      greenemin = 188;
+      var greenepts;
+      greenepts = 126;
+      document.write("points per minute played: " + Math.round((greenepts / greenemin) * 1000) / 1000)
+      var greenestl
+      greenestl = 13;
+      document.write("<br>steals per minute played: " + Math.round((greenestl / greenemin) * 1000) / 1000)
+      var greeneblk
+      greeneblk = 2;
+      document.write("<br>blocks per minute played: " + Math.round((greeneblk / greenemin) * 1000) / 1000)
+      var greeneTO
+      greeneTO = 20;
+      document.write("<br>Turnovers per minute played: " + Math.round((greeneTO / greenemin) * 1000) / 1000)
+      var greenePF
+      greenePF = 28;
+      document.write("<br>fouls per minute played: " + Math.round((greenePF / greenemin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((greenestl / greeneTO) * 1000) / 1000)
+    </script>
+    <br><br>
+
+
+
+    Kyle Thengvall:<br>
+    <script>
+      var thengvallmin;
+      thengvallmin = 172;
+      var thengvallpts;
+      thengvallpts = 92;
+      document.write("points per minute played: " + Math.round((thengvallpts / thengvallmin) * 1000) / 1000)
+      var thengvallstl
+      thengvallstl = 15;
+      document.write("<br>steals per minute played: " + Math.round((thengvallstl / thengvallmin) * 1000) / 1000)
+      var thengvallblk
+      thengvallblk = 3;
+      document.write("<br>blocks per minute played: " + Math.round((thengvallblk / thengvallmin) * 1000) / 1000)
+      var thengvallTO
+      thengvallTO = 14;
+      document.write("<br>Turnovers per minute played: " + Math.round((thengvallTO / thengvallmin) * 1000) / 1000)
+      var thengvallPF
+      thengvallPF = 21;
+      document.write("<br>fouls per minute played: " + Math.round((thengvallPF / thengvallmin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((thengvallstl / thengvallTO) * 1000) / 1000)
+    </script>
+
+
+
+
+    <br><br>
+    Clay Putthoff:<br>
+    <script>
+      var putthoffmin;
+      putthoffmin = 183;
+      var putthoffpts;
+      putthoffpts = 76;
+      document.write("points per minute played: " + Math.round((putthoffpts / putthoffmin) * 1000) / 1000)
+      var putthoffstl
+      putthoffstl = 11;
+      document.write("<br>steals per minute played: " + Math.round((putthoffstl / putthoffmin) * 1000) / 1000)
+      var putthoffblk
+      putthoffblk = 1;
+      document.write("<br>blocks per minute played: " + Math.round((putthoffblk / putthoffmin) * 1000) / 1000)
+      var putthoffTO
+      putthoffTO = 13;
+      document.write("<br>Turnovers per minute played: " + Math.round((putthoffTO / putthoffmin) * 1000) / 1000)
+      var putthoffPF
+      putthoffPF = 17;
+      document.write("<br>fouls per minute played: " + Math.round((putthoffPF / putthoffmin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((putthoffstl / putthoffTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Hunter Bonel:<br>
+    <script>
+      var bonelmin;
+      bonelmin = 65;
+      var bonelpts;
+      bonelpts = 20;
+      document.write("points per minute played: " + Math.round((bonelpts / bonelmin) * 1000) / 1000)
+      var bonelstl
+      bonelstl = 1;
+      document.write("<br>steals per minute played: " + Math.round((bonelstl / bonelmin) * 1000) / 1000)
+      var bonelblk
+      bonelblk = 0;
+      document.write("<br>blocks per minute played: " + Math.round((bonelblk / bonelmin) * 1000) / 1000)
+      var bonelTO
+      bonelTO = 5;
+      document.write("<br>Turnovers per minute played: " + Math.round((bonelTO / bonelmin) * 1000) / 1000)
+      var bonelPF
+      bonelPF = 2;
+      document.write("<br>fouls per minute played: " + Math.round((bonelPF / bonelmin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((bonelstl / bonelTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Nyima Chonden:<br>
+    <script>
+      var chondenmin;
+      chondenmin = 169;
+      var chondenpts;
+      chondenpts = 73;
+      document.write("points per minute played: " + Math.round((chondenpts / chondenmin) * 1000) / 1000)
+      var chondenstl
+      chondenstl = 15;
+      document.write("<br>steals per minute played: " + Math.round((chondenstl / chondenmin) * 1000) / 1000)
+      var chondenblk
+      chondenblk = 30;
+      document.write("<br>blocks per minute played: " + Math.round((chondenblk / chondenmin) * 1000) / 1000)
+      var chondenTO
+      chondenTO = 12;
+      document.write("<br>Turnovers per minute played: " + Math.round((chondenTO / chondenmin) * 1000) / 1000)
+      var chondenPF
+      chondenPF = 22;
+      document.write("<br>fouls per minute played: " + Math.round((chondenPF / chondenmin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((chondenstl / chondenTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Ryan Taylor:<br>
+    <script>
+      var taylormin;
+      taylormin = 116;
+      var taylorpts;
+      taylorpts = 17;
+      document.write("points per minute played: " + Math.round((taylorpts / taylormin) * 1000) / 1000)
+      var taylorstl
+      taylorstl = 9;
+      document.write("<br>steals per minute played: " + Math.round((taylorstl / taylormin) * 1000) / 1000)
+      var taylorblk
+      taylorblk = 1;
+      document.write("<br>blocks per minute played: " + Math.round((taylorblk / taylormin) * 1000) / 1000)
+      var taylorTO
+      taylorTO = 10;
+      document.write("<br>Turnovers per minute played: " + Math.round((taylorTO / taylormin) * 1000) / 1000)
+      var taylorPF
+      taylorPF = 5;
+      document.write("<br>fouls per minute played: " + Math.round((taylorPF / taylormin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((taylorstl / taylorTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Ahmed Miracle:<br>
+    <script>
+      var miraclemin;
+      miraclemin = 83;
+      var miraclepts;
+      miraclepts = 20;
+      document.write("points per minute played: " + Math.round((miraclepts / miraclemin) * 1000) / 1000)
+      var miraclestl
+      miraclestl = 2;
+      document.write("<br>steals per minute played: " + Math.round((miraclestl / miraclemin) * 1000) / 1000)
+      var miracleblk
+      miracleblk = 0;
+      document.write("<br>blocks per minute played: " + Math.round((miracleblk / miraclemin) * 1000) / 1000)
+      var miracleTO
+      miracleTO = 10;
+      document.write("<br>Turnovers per minute played: " + Math.round((miracleTO / miraclemin) * 1000) / 1000)
+      var miraclePF
+      miraclePF = 7;
+      document.write("<br>fouls per minute played: " + Math.round((miraclePF / miraclemin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((miraclestl / miracleTO) * 1000) / 1000)
+    </script>
+    <br><br>
+    Owen Kolachov:<br>
+    <script>
+      var kolachovmin;
+      kolachovmin = 94;
+      var kolachovpts;
+      kolachovpts = 41;
+      document.write("points per minute played: " + Math.round((kolachovpts / kolachovmin) * 1000) / 1000)
+      var kolachovstl
+      kolachovstl = 4;
+      document.write("<br>steals per minute played: " + Math.round((kolachovstl / kolachovmin) * 1000) / 1000)
+      var kolachovblk
+      kolachovblk = 0;
+      document.write("<br>blocks per minute played: " + Math.round((kolachovblk / kolachovmin) * 1000) / 1000)
+      var kolachovTO
+      kolachovTO = 15;
+      document.write("<br>Turnovers per minute played: " + Math.round((kolachovTO / kolachovmin) * 1000) / 1000)
+      var kolachovPF
+      kolachovPF = 12;
+      document.write("<br>fouls per minute played: " + Math.round((kolachovPF / kolachovmin) * 1000) / 1000)
+      document.write("<br>steals per turnover: " + Math.round((kolachovstl / kolachovTO) * 1000) / 1000)
+    </script>
+  </span>
+  
+  <button onclick="add()">Add Game</button>
+  <script>
+  function add(){
+   carriermin= carriermin+ parseFloat(prompt("How many minutes did Diego Play"))
+   console.log(carriermin)
+  }
+  </script>
+  
+  
+  
+  <script>
+    document.write("<table> <tr><th>Name</th><th>Minutes</th><th>Points</th><th>Turnovers</th><th>Steals</th><th>Blocks</th><th>Fouls</th><tr>")
+    document.write("<tr><th>D. Carrier</th><th>" + carriermin + "</th><th>" + carrierpts + "</th><th>" + carrierTO + "</th><th>" + carrierstl + "</th><th>" + carrierblk + "</th><th>" + carrierPF + "</th><tr>")
+    document.write("<tr><th>A. Greene</th><th>" + greenemin + "</th><th>" + greenepts + "</th><th>" + greeneTO + "</th><th>" + greenestl + "</th><th>" + greeneblk + "</th><th>" + greenePF + "</th><tr>")
+    document.write("<tr><th>C. Custard</th><th>" + custardmin + "</th><th>" + custardpts + "</th><th>" + custardTO + "</th><th>" + custardstl + "</th><th>" + custardblk + "</th><th>" + custardPF + "</th><tr>")
+    document.write("<tr><th>H. Bonel</th><th>" + bonelmin + "</th><th>" + bonelpts + "</th><th>" + bonelTO + "</th><th>" + bonelstl + "</th><th>" + bonelblk + "</th><th>" + bonelPF + "</th><tr>")
+    document.write("<tr><th>C. Putthoff</th><th>" + putthoffmin + "</th><th>" + putthoffpts + "</th><th>" + putthoffTO + "</th><th>" + putthoffstl + "</th><th>" + putthoffblk + "</th><th>" + putthoffPF + "</th><tr>")
+    document.write("<tr><th>K. Thengvall</th><th>" + thengvallmin + "</th><th>" + thengvallpts + "</th><th>" + thengvallTO + "</th><th>" + thengvallstl + "</th><th>" + thengvallblk + "</th><th>" + thengvallPF + "</th><tr>")
+    document.write("<tr><th>N. Chonden</th><th>" + chondenmin + "</th><th>" + chondenpts + "</th><th>" + chondenTO + "</th><th>" + chondenstl + "</th><th>" + chondenblk + "</th><th>" + chondenPF + "</th><tr>")
+    document.write("<tr><th>R. Taylor</th><th>" + taylormin + "</th><th>" + taylorpts + "</th><th>" + taylorTO + "</th><th>" + taylorstl + "</th><th>" + taylorblk + "</th><th>" + taylorPF + "</th><tr>")
+    document.write("<tr><th>A. Miracle</th><th>" + miraclemin + "</th><th>" + miraclepts + "</th><th>" + miracleTO + "</th><th>" + miraclestl + "</th><th>" + miracleblk + "</th><th>" + miraclePF + "</th><tr>")
+    document.write("<tr><th>O. Kolachov</th><th>" + kolachovmin + "</th><th>" + kolachovpts + "</th><th>" + kolachovTO + "</th><th>" + kolachovstl + "</th><th>" + kolachovblk + "</th><th>" + kolachovPF + "</th><tr>")
+    document.write("<h1>Basic Stats</h1>")
+  </script>
+  <script>
+    document.write("<table> <tr><th>Name</th><th>Minutes</th><th>Points</th><th>Turnovers</th><th>Steals</th><th>Blocks</th><th>Fouls</th><tr>")
+    document.write("<tr><th>D. Carrier</th><th>" + carriermin + "</th><th>" + Math.round((carrierpts / carriermin) * 1000) / 1000 + "</th><th>" + Math.round((carrierTO / carriermin) * 1000) / 1000 + "</th><th>" + Math.round((carrierstl / carriermin) * 1000) / 1000 + "</th><th>" + Math.round((carrierblk / carriermin) * 1000) / 1000 + "</th><th>" + Math.round((carrierPF / carriermin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>A. Greene</th><th>" + greenemin + "</th><th>" + Math.round((greenepts / greenemin) * 1000) / 1000 + "</th><th>" + Math.round((greeneTO / greenemin) * 1000) / 1000 + "</th><th>" + Math.round((greenestl / greenemin) * 1000) / 1000 + "</th><th>" + Math.round((greeneblk / greenemin) * 1000) / 1000 + "</th><th>" + Math.round((greenePF / greenemin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>C. Custard</th><th>" + custardmin + "</th><th>" + Math.round((custardpts / custardmin) * 1000) / 1000 + "</th><th>" + Math.round((custardTO / custardmin) * 1000) / 1000 + "</th><th>" + Math.round((custardstl / custardmin) * 1000) / 1000 + "</th><th>" + Math.round((custardblk / custardmin) * 1000) / 1000 + "</th><th>" + Math.round((custardPF / custardmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>H. Bonel</th><th>" + bonelmin + "</th><th>" + Math.round((bonelpts / bonelmin) * 1000) / 1000 + "</th><th>" + Math.round((bonelTO / bonelmin) * 1000) / 1000 + "</th><th>" + Math.round((bonelstl / bonelmin) * 1000) / 1000 + "</th><th>" + Math.round((bonelblk / bonelmin) * 1000) / 1000 + "</th><th>" + Math.round((bonelPF / bonelmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>C. Putthoff</th><th>" + putthoffmin + "</th><th>" + Math.round((putthoffpts / putthoffmin) * 1000) / 1000 + "</th><th>" + Math.round((putthoffTO / putthoffmin) * 1000) / 1000 + "</th><th>" + Math.round((putthoffstl / putthoffmin) * 1000) / 1000 + "</th><th>" + Math.round((putthoffblk / putthoffmin) * 1000) / 1000 + "</th><th>" + Math.round((putthoffPF / putthoffmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>K. Thengvall</th><th>" + thengvallmin + "</th><th>" + Math.round((thengvallpts / thengvallmin) * 1000) / 1000 + "</th><th>" + Math.round((thengvallTO / thengvallmin) * 1000) / 1000 + "</th><th>" + Math.round((thengvallstl / thengvallmin) * 1000) / 1000 + "</th><th>" + Math.round((thengvallblk / thengvallmin) * 1000) / 1000 + "</th><th>" + Math.round((thengvallPF / thengvallmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>N. Chonden</th><th>" + chondenmin + "</th><th>" + Math.round((chondenpts / chondenmin) * 1000) / 1000 + "</th><th>" + Math.round((chondenTO / chondenmin) * 1000) / 1000 + "</th><th>" + Math.round((chondenstl / chondenmin) * 1000) / 1000 + "</th><th>" + Math.round((chondenblk / chondenmin) * 1000) / 1000 + "</th><th>" + Math.round((chondenPF / chondenmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>R. Taylor</th><th>" + taylormin + "</th><th>" + Math.round((taylorpts / taylormin) * 1000) / 1000 + "</th><th>" + Math.round((taylorTO / taylormin) * 1000) / 1000 + "</th><th>" + Math.round((taylorstl / taylormin) * 1000) / 1000 + "</th><th>" + Math.round((taylorblk / taylormin) * 1000) / 1000 + "</th><th>" + Math.round((taylorPF / taylormin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>A. Miracle</th><th>" + miraclemin + "</th><th>" + Math.round((miraclepts / miraclemin) * 1000) / 1000 + "</th><th>" + Math.round((miracleTO / miraclemin) * 1000) / 1000 + "</th><th>" + Math.round((miraclestl / miraclemin) * 1000) / 1000 + "</th><th>" + Math.round((miracleblk / miraclemin) * 1000) / 1000 + "</th><th>" + Math.round((miraclePF / miraclemin) * 1000) / 1000 + "</th><tr>")
+    document.write("<tr><th>O. Kolachov</th><th>" + kolachovmin + "</th><th>" + Math.round((kolachovpts / kolachovmin) * 1000) / 1000 + "</th><th>" + Math.round((kolachovTO / kolachovmin) * 1000) / 1000 + "</th><th>" + Math.round((kolachovstl / kolachovmin) * 1000) / 1000 + "</th><th>" + Math.round((kolachovblk / kolachovmin) * 1000) / 1000 + "</th><th>" + Math.round((kolachovPF / kolachovmin) * 1000) / 1000 + "</th><tr>")
+    document.write("<h1>Stats per Minute Played</h1>")
+  </script>
+
+
+</body>
+
+</html>

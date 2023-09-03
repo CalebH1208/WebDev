@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>calculator</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    table {
+      background-color: fuchsia;
+      margin-left: 25vw;
+    }
+
+    td {
+      height: 10vw;
+      width: 10vw;
+      border: 1px solid peachpuff;
+    }
+
+    button {
+      background-color: lime;
+      color: fuchsia;
+      border: 6px double purple;
+      height: 100%;
+      width: 100%;
+      font-size: x-large;
+    }
+
+    #ew {
+      height: 50px;
+      width: 50px;
+      font-size: x-small;
+      color:black;
+      background-color:black;
+      border: 6px double black;
+    }
+    #third{
+      background-color:black;
+      border:1px double black;
+    }
+    #ew:hover{
+      background-color: lime;
+      color: fuchsia;
+      border: 6px double purple;
+      height: 100%;
+      width: 100%;
+      font-size: x-large;
+      transition:60s;
+    }
+#third:hover{
+  
+  background-color:blue;
+  transition:2s;
+  transition:60s;
+}
+#ew2{
+  border: 1px solid black;
+}
+    #big {
+      background-image: url("horse.png");
+      /* https://cbdfx.com/wp-content/uploads/2020/10/How-A-Walk-In-The-Pine-Trees-And-CBD-Are-Connected-1024x608.jpg */
+      background-size: 40px 35px;
+      background-repeat: repeat;
+
+
+    }
+
+    #disp {
+      font-size: xx-large;
+      text-align: right;
+    }
+
+    #second {
+      margin-left: 18vw;
+      margin-top: 3vw;
+    }
+
+    #second.td {
+      width: 3px;
+    }
+    #nihar:hover{
+      background-color:gold;
+      transition:15s;
+      transform: rotate(420deg)
+    }
+  </style>
+  <script>
+    var mem1
+    var mem2
+
+    function item(x) {
+      var y = document.getElementById("disp")
+      if (y.innerHTML == "0") {
+        y.innerHTML = ""
+        y.innerHTML = y.innerHTML + x
+      }
+      else if (y.innerHTML == "Welcome!!!") {
+
+        y.innerHTML = ""
+        y.innerHTML = y.innerHTML + x
+      }
+
+      else {
+        y.innerHTML = y.innerHTML + x
+      }
+
+
+      return y;
+    }
+
+    function plus(x) {
+      var y = document.getElementById("disp") += x
+      y.innerHTML = y.innerHTML + x
+
+      return y;
+    }
+
+    function clr() {
+
+      var y = document.getElementById("disp")
+      y.innerHTML = "0"
+      return y;
+    }
+
+    function eql() {
+      var y = document.getElementById("disp")
+      var x = eval(y.innerHTML)
+      y.innerHTML = x
+      mem2 = mem1
+      mem1 = x
+    }
+
+    function big() {
+      var y = document.getElementById("disp")
+      if (y.innerHTML == "0") {
+        y.innerHTML = ""
+        y.innerHTML = y.innerHTML + (Math.round(((Math.random() * 15) - 22) * 100) / 10);
+      }
+      else if (y.innerHTML == "Welcome!!!") {
+
+        y.innerHTML = ""
+        y.innerHTML = y.innerHTML + (Math.round(((Math.random() * 15) - 22) * 100) / 10);
+      }
+      else {
+        y.innerHTML = y.innerHTML + (Math.round(((Math.random() * 15) - 3) * 100) / 10);
+      }
+
+      return y;
+    }
+
+    function sqrt() {
+      var y = document.getElementById("disp")
+      y.innerHTML = "(" + y.innerHTML + ")**(1/2)"
+
+      return y;
+    }
+
+    function trunch() {
+      var y = document.getElementById("disp")
+      y.innerHTML = Math.round(y.innerHTML * 1000) / 1000
+      return y;
+    }
+
+    function nihar() {
+      var e = document.getElementById("body")
+      e.style["background-image"] = "url('nihar-03-1.png')";
+      return e;
+    }
+    function nmn() {
+      var e = document.getElementById("body")
+      e.style["background-image"] = "url('')";
+      
+      return e;
+    }
+    function vbs(){
+      var y = document.getElementById("disp")
+    }
+  </script>
+</head>
+
+<body id=body>
+  <table>
+    <tr>
+      <td colspan=5>
+        <div id=disp>Welcome!!!</div>
+      </td>
+
+    </tr>
+    <tr>
+      <td><button onclick="item('7')">7</button></td>
+      <td><button onclick="item('+')">+</button></td>
+      <td><button onclick="item('-')">-</button></td>
+      <td><button onclick="item('1')">1</button></td>
+      <td><button onclick="eql()">=</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="item('*')">*</button></td>
+      <td><button onclick="item('2')">2</button></td>
+      <td><button onclick="item('/')">/</button></td>
+      <td><button onclick="item('9')">9</button></td>
+      <td><button onclick="item('(')">(</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="item(')')">)</button></td>
+      <td><button onclick="item('5')">5</button></td>
+      <td><button onclick="item('.')">.</button></td>
+      <td><button onclick="item('6')">6</button></td>
+      <td><button onclick="item('0')">0</button></td>
+
+    </tr>
+    <tr>
+      <td><button onclick="item('3')">3</button></td>
+      <td colspan=3><button id=big onclick="big()"></button></td>
+      <td><button onclick="item('8')">8</button></td>
+    </tr>
+  </table>
+  <table id=second>
+    <tr>
+      <td><button onclick="clr()">AC</button></td>
+      <td><button onclick="item('**')">**</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="item(mem1)">mem1</button></td>
+      <td><button onclick="item(mem2)">mem2</button></td>
+    </tr>
+    <tr>
+      <td><button id="nihar" onmouseover="nihar()" onclick="sqrt()" onmouseout="nmn()">sqrt</button></td>
+      <td><button onclick="trunch()">trunch</button></td>
+    </tr>
+<tr>
+      
+      <td colspan=2><button  onclick="vbs()">Backspace</button></td>
+    </tr>
+  </table>
+
+<table id=third>
+  <tr><td id=ew2><button id=ew onclick="item('4')">4</button></td></tr>
+</table>
+</body>
+
+</html>

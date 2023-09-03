@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="library.js"></script>
+<title>Move It!</title>
+<style>
+#full{
+  background-image:url("horse.png")
+   
+}
+div#container{
+    overflow: hidden;
+    position: relative;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: fuchsia;
+    margin-left:40vw;
+}
+img#image {
+    position: absolute;
+}
+#buttons{
+  margin-left:40vw;
+  
+}
+button{
+  color:green;
+  background-color:peachpuff;
+   height: 100%;
+      width: 100%;
+}
+table{
+  background-color:black;
+  width:204px;
+}
+</style>
+<script>
+var rl = 0
+var rr = 0
+var SCALE = 1
+function up() {
+  var x = parseFloat(getCSS("image","top"))
+  x=x-7
+  x = x+"px"
+  setCSS("image", "top", x)
+}
+function down() {
+  var x = parseFloat(getCSS("image","top"))
+  x=x+7
+  x = x+"px"
+  setCSS("image", "top", x)
+}
+function left() {
+   var x = parseFloat(getCSS("image","left"))
+  x=x-7
+  x = x+"px"
+  setCSS("image", "left", x)
+}
+function right() {
+   var x = parseFloat(getCSS("image","left"))
+  x=x+7
+  x = x+"px"
+  setCSS("image", "left", x)
+}
+function zoomIn(){
+   var x = getCSS("image","transform")
+    var x = getCSS("image","transform")
+   SCALE = SCALE *1.07;
+   x = "scale("+SCALE+") rotate("+ rl+"deg)";
+   setCSS("image", "transform", x)
+}
+function zoomOut() {
+   
+    var x = getCSS("image","transform")
+   SCALE = SCALE *.93;
+   x = "scale("+SCALE+") rotate("+ rl+"deg)";
+   setCSS("image", "transform", x)
+}
+function rL(){
+   var x = getCSS("image","transform")
+   rl = rl + 36;
+   x = "scale("+SCALE+") rotate("+ rl+"deg)";
+   setCSS("image", "transform", x)
+}
+function rR() {
+   var x = getCSS("image","transform")
+   rl = rl - 36;
+   x = "scale("+SCALE+") rotate("+ rl+"deg)";
+   setCSS("image", "transform", x)
+}
+</script>
+</head>
+<body>
+  <div id=full>
+<div id="container">
+<img id="image" style="top: 0px; left: 0px; width: 200px; transform:scale(1) rotate(4 deg)" src="nihar.png" alt="Fez">
+</div>
+<div id="buttons">
+<table>
+<tr><td><button onclick="up()">Up</button></td>
+<td><button onclick="down()">Down</button></td></tr>
+<tr><td><button onclick="left()">Left</button></td>
+<td><button onclick="right()">Right</button></td></tr>
+<tr><td><button onclick="zoomIn()">Zoom In</button></td>
+<td><button onclick="zoomOut()">Zoom Out</button></td></tr>
+<tr><td><button onclick="rL()">Rotate left</button></td>
+<td><button onclick="rR()">Rotate right</button></td></tr>
+</table>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>hola papi
+</div>
+</body>
+</html>
+
+
+

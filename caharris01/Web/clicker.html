@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  
+  button{
+    color:orange;
+    background-color:peachpuff;
+  }
+  body{
+    background-color:black;
+    color:white;
+  }
+  img{
+    border:20px double green;
+    width:95px;
+    height:195px;
+  }
+  </style>
+  <script src="library.js"></script>
+  <script>
+    function countUp(amt){
+      var c =parseFloat(get("count"));
+      
+      if(amt== undefined){
+        amt = Math.random()
+      }
+      c = c +amt
+      if (c == 10){
+        change("message", "nice going")
+        e = document.getElementById("message");
+        e.style["color"]="red"
+        e.style["background-color"]= "yellow"
+      }
+      else if(c==7){
+        change("message", "You have reached Nirvana")
+      }
+      else if(c==35){
+        change("message", "HI NIHAR HOWS YOUR DAY GOING <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b<br><br><br><br>")
+      }
+      else if(c==37){
+        change("message", ";)")
+      }
+      change("count", c)
+      
+    }
+    function countDown(){
+      var c =parseFloat(get("count"));
+      
+      if (c < 1){
+        change("message", "stop wrong way")
+      }
+      else if(c==8){
+        change("message", "You have reached Nirvana")
+        c = c-1
+      }
+      else{
+        c = c -1
+      }
+      change("count", c)
+    }
+  </script>
+</head>
+
+<body>
+Count: <span id="count">0</span><br>
+message: <span id= "message">click to count</span><br>
+<img src="horse.png" onclick="countUp(1)">
+<br>
+<button onmouseover="countDown()">CLICK ME!</button>
+<button onclick="countUp(.17)">mess</button>
+<button onclick="countUp()">random</button>
+</body>
+
+</html>

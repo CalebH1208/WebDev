@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script src= "library.js">
+    
+  </script>
+</head>
+
+<body>
+<div id="message" style="color:green;">Hello</div>
+<script>
+  var c = getCSS("message", "color")
+  console.log(c)
+  setCSS ("message", "color", "red");
+  setCSS ("message", "background-color", "blue");
+  function change() {
+	var current = getCSS("message", "color");
+	if (current == "green") {
+		setCSS ("message", "color", "red");
+	}
+	else {
+		setCSS("message", "color", "green");
+	}
+}
+function changebg() {
+	var current = getCSS("message", "background-color");
+	if (current == "green") {
+		setCSS ("message", "background-color", "red");
+	}
+	else {
+		setCSS("message", "background-color", "green");
+	}
+}
+
+</script>
+<button onclick=change()>Change the color</button>
+<button onclick=changebg()>Change the background color</button>
+</body>
+
+</html>

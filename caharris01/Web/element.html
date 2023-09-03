@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script>
+    function add(newText){
+      var e = document.getElementById("disp");
+      e.innerHTML += newText
+    }
+    function color(co){
+      var e = document.getElementById("disp")
+      e.style["color"]= co;
+    }
+  </script>
+</head>
+
+<body>
+<div id="disp" style="color: blue">Some boring stuff</div>
+<button onclick="add('!')">add </button>
+<button onclick="add('<br> HI NIHAR WILL YOU GO OUT WITH ME ')">;) </button>
+<button onclick="add('?')">? </button>
+<button onclick="color('red')">fuschia</button>
+<button onclick="color('red')">fuschia</button>
+<button onclick="color('red')">fuschia</button>
+<button onclick="color('fuchsia')">fuschia</button>
+<button onclick="color('green')">fuschia</button>
+
+</body>
+
+</html>
+

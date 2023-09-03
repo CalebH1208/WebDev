@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+Project 2: Calendar Page
+used transform to make each of my boxes tilt slightly and other boxes spin
+also made dates disapear and appear when moused over and then change the backgrounds of specific days on the calender.
+also if you remove the comment /**/ around the second rule in the style sheets the calender is infinitly better
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DECEMBER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+  <style>
+    table {
+      margin-left: 10%
+    }
+/*table:hover{
+  transform:rotate(180deg);
+}*/
+    body {
+      background-image: url("pinetrees.jpg");
+      /* https://cbdfx.com/wp-content/uploads/2020/10/How-A-Walk-In-The-Pine-Trees-And-CBD-Are-Connected-1024x608.jpg */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Open Sans Condensed', sans-serif;
+
+    }
+
+    th {
+      width: 12%;
+
+    }
+
+    td {
+
+      background-color: blanchedalmond;
+      vertical-align: text-top;
+    }
+
+    table {
+      background-color: rosybrown;
+      color: indigo;
+      width: 80%;
+
+    }
+
+    h1 {
+      text-align: center;
+      background-color: blanchedalmond;
+      border: 3px solid rosybrown;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 0px;
+      color: indigo;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-family: web;
+    }
+
+    td:hover p.XME2 {
+      display: block;
+      position: absolute;
+      text-align: center;
+      background-image: url("SantaSleigh.png");
+      /* https://publicdomainvectors.org/photos/SantaSleigh.png */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      width: 100%;
+      margin-top: -5px;
+      padding-bottom: 70px;
+    }
+
+    p.XME2 {
+      display: none;
+      color: indigo;
+    }
+
+    p.XMAS2 {
+      display: none;
+      color: white;
+
+    }
+
+    td:hover p.XMAS2 {
+      display: block;
+      position: absolute;
+      text-align: center;
+      background-image: url("chritmaz.png");
+      /* https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/67318.png */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 10vw;
+      height: 10vw;
+      
+    }
+
+    tr.day td {
+      height: 12vw;
+      width: 12vw;
+    }
+
+    td.nnd:hover {
+      background-color: thistle;
+      transition: 1s;
+    }
+
+    #nndt {
+      margin-top: -5px;
+    }
+
+    #NYE {
+      margin-top: -5px;
+    }
+
+    td.NYE:hover {
+      background-image: url("snowytrees.jpg");
+      /* https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Pine_trees_covered_in_snow.jpg/1200px-Pine_trees_covered_in_snow.jpg*/
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: wheat;
+      transform: rotate(-2deg);
+    }
+
+    #p6 {
+      transition: transform 1s;
+    }
+
+    #p6:hover {
+      transform: rotate(420deg);
+    }
+
+    td.ni {
+      background-color: olivedrab;
+    }
+
+    #sig {
+      color: white;
+      text-align: center;
+    }
+
+    a:hover {
+      color: hotpink;
+    }
+
+    #hlc {
+      color: white;
+    }
+
+    #hlc:hover {
+      color: hotpink;
+    }
+    #atr{
+      background-color:fuchsia;
+    }
+    #atr:hover{
+      background-color:blanchedalmond;
+      transition:2s;
+    }
+    td:hover{
+      background-color: rgb(250,200,255);
+      transition:.5s;
+      transform: rotate(2deg);
+    }
+    td.odd:hover{
+      transform: rotate(-2deg);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>December 2022</h1>
+  <table>
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Sunday</th>
+    </tr>
+    <tr class=day>
+
+      <td class=ni>27</td>
+      <td class=ni>28</td>
+      <td class=ni>29</td>
+      <td class=ni>30</td>
+      <td class=odd>1
+        <p>THE FIRST DAY OF THE BEST MONTH</p>
+      </td>
+      <td>2</td>
+      <td class=odd>3
+        <p>FARMERS DAY!!!<a href="https://en.wikipedia.org/wiki/Ghana">(in Ghana)</a></p>
+      </td>
+    </tr>
+    <tr class=day>
+
+      <td>4</td>
+      <td class=odd>5</td>
+      <td id=p6>6
+        <p><a href="https://en.wikipedia.org/wiki/December_6">Pushpaman's BDAY</a></p>
+      </td>
+      <td class="nnd">7
+        <p id="nndt"><a href="https://www.babycenter.com/baby-names-nihar-489815.htm"> ITS NATIONAL NIHAR DAY WHAT A COOL DAY</a> </p>
+      </td>
+      <td>8</td>
+      <td class=odd>9</td>
+      <td>10</td>
+    </tr>
+    <tr class=day>
+
+      <td class=odd>11</td>
+      <td>12</td>
+      <td class=odd>13</td>
+      <td>14</td>
+      <td class=odd>15</td>
+      <td id=atr>16<p>A TOTALLY RANDOM DAY ;)</p></td>
+      <td class=odd>17</td>
+    </tr>
+    <tr class=day>
+
+      <td>18</td>
+      <td class=odd>19</td>
+      <td>20</td>
+      <td class=odd>21</td>
+      <td>22</td>
+      <td class=odd>23</td>
+      <td class=XME>24
+        <p class=XME2>CHRISTMAS EVE</p>
+      </td>
+    </tr>
+    <tr class=day>
+
+      <td class=XMAS>25
+        <p class=XMAS2><a href="https://en.wikipedia.org/wiki/Christmas" id=hlc>CHRISTMAS DAY</a></p>
+      </td>
+      <td>26</td>
+      <td class=odd>27</td>
+      <td>28</td>
+      <td class=odd>29</td>
+      <td>30</td>
+      <td class=NYE>31
+        <p id=NYE>NEW YEARS EVE</p>
+      </td>
+    </tr>
+  </table>
+
+  <p id=sig>MY SIGNITURE : CALEB HARRIS</p>
+</body>
+
+</html>

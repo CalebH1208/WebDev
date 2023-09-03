@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  body{
+    background-color:black;
+  }
+  #yn{
+    height:15vw;
+    width:15vw;
+  }
+  #bl{
+    margin-top:50px;
+    margin-left:16px;
+    margin-right:16px;
+  }
+  #top{
+    position:fixed;
+    z-index:50;
+  }
+  #foot{
+    position:fixed;
+    z-index:50;
+    bottom:0px;
+  }
+  ol{
+    font-size:large;
+  }
+  </style>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+  <div class="w3-bar w3-black" id=top>
+  <a href="#" class="w3-bar-item w3-button">top</a>
+  <a href="#lg" class="w3-bar-item w3-button">Line Graph</a>
+  <a href="#sp" class="w3-bar-item w3-button">Scatterplot</a>
+  
+</div>
+  <br><br>
+  
+  
+  
+  
+  <div class="w3-card w3-purple w3-center w3-hover-xxlarge">
+    <h1>Data Visualization with ggplot2</h1>
+    
+  </div>
+<div class="w3-display-container w3-purple w3-center w3-paddding-16 w3-panel">
+  <img src="YN.JPG" id=yn class="w3-display-left w3-circle ">
+    <h3>Created by Nihar</h3>
+    
+  </div>
+  <div class="w3-light-blue w3-display-container w3-padding-16" id=bl>
+    <p class="w3-display-container w3-cell"><img src="Export1.png" class="w3-image w3-hover-opacity"></p>
+    
+    <p class="w3-display-container w3-cell w3-display-topright w3-blue"><img src="export2.png" class="w3-image w3-hover-opacity"></p>
+  </div>
+  <div class="w3-card w3-blue" style="margin-top:100px" id=lg>
+    <h2 class="w3-center">How to Create a line Graph using ggplot2</h2>
+    
+    <ol>First a Dataset must be loaded into R to graph</ol>
+    <ol>Then Using the data call the ggplot() function</ol>
+    <ol>The first argument of this function should be the dat a that you would like to use</ol>
+    <ol>Then you add another function to the line of code for a line graph this must be +geom_line()</ol>
+    <ol>In this function the arguments should be aes() which you put the x and y value into</ol>
+    <ol>after that you have a very simple line graph that will show the relation between two variables</ol>
+    
+  </div>
+    <div class="w3-card w3-purple margin-top">
+    <h2>Sample code of a line graph</h2>
+    <img src="Rcode2.PNG" class="w3-margin w3-center">
+  </div>
+  <div class="w3-card w3-blue " id=sp>
+    <h2 class="w3-center">How to make a scatterplot</h2>
+    <ol>For a scaterplot the process is very similar</ol>
+    <ol>Complete the first steps for a line graph but instead of adding the function +geom_line add +geom_point</ol>
+    <ol> Then With both of these graphs you can add aesthetics and labels</ol>
+    <ol>to add labels the function is +labs() in here you can add a title and subtitle and axis labels</ol>
+    <ol>You can also change the spacing and scale of the  x and y axis with other functions</ol>
+    <ol>Graphs can be easily changed and customized with ggplot2</ol>
+  </div>
+  <div class="w3-card w3-purple">
+    <h2>Sample code of a Scatterplot</h2>
+    <img src="Rcode.PNG" class="w3-margin w3-center">
+  </div>
+  <div class="w3-bar w3-black" id=foot>
+    <p>this is a footer for foots sake</p>
+    
+  </div>
+</body>
+
+</html>

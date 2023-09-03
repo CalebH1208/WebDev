@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Constrain</title>
+  <style>
+    div#container {
+      position: relative;
+      height: 200px;
+      width: 400px;
+      background-color: purple;
+      background-image: url(nihar2.PNG);
+      background-size: cover;
+    }
+
+    #button {
+      position: absolute;
+      width: 50px;
+      height: 40;
+    }
+  </style>
+  <script src="library.js"></script>
+  <script>
+    var i
+    var dirX = 1
+    var dirY = 1
+    var TN = null
+
+    function start() {
+      if (TN == null) {
+        TN = setInterval("move()", 2);
+      }
+      console.log(TN)
+    }
+
+    function stop() {
+      clearInterval(TN)
+      TN = null
+
+    }
+
+    function move() {
+      let x = parseInt(getCSS("button", "left"));
+      x = x + dirX;
+      if (x > 340) {
+        dirX = -1
+      }
+      else if (x < 10) {
+        dirX = 1
+      }
+      setCSS("button", "left", x + "px");
+      let y = parseInt(getCSS("button", "top"))
+      y = y + dirY
+      if (y > 150) {
+        dirY = -1
+      }
+      else if (y < 10) {
+        dirY = 1
+      }
+      setCSS("button", "top", y + "px")
+    }
+  </script>
+</head>
+
+<body>
+
+  <div id="container">
+    <img id="button" src="nihar.png" onclick="move()" style="top: 90px; left: 160px; width:50px;height:40px;" )>
+  </div>
+  <button onclick="start()">start</button>
+  <button onclick="stop()">stop</button>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script src="library.js">  </script>
+  <script>
+    var  time
+    function countdown(){
+      timer = setInterval("update()", 1000)
+      
+    }
+    function update(){
+      if(time>0){
+      time = time -1
+      change("disp", time)
+      }
+      else if(time == 0){
+        alert("your "+ initial + " second timer is over")
+        clearInterval(timer)
+      }
+      
+      
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id=disp> </div>
+<script>
+  time =prompt("how long would you like to count down?")
+  var initial = time
+  change("disp", time)
+  countdown()
+  
+</script>
+
+</body>
+
+</html>

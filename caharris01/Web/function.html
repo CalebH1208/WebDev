@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+  <script>
+    function f(x){
+      var y = x**2 +15;
+      return y;
+    }
+    function ask(){
+      var x = parseFloat(prompt("enter an X value"));
+      
+      var y = f(x)
+      return y;
+    }
+    
+  </script>
+</head>
+
+<body>
+<script>
+ 
+  
+</script>
+
+<button onclick="console.log(f(0))">f(0)</button>
+<button onclick="console.log(f(10))">f(10)</button>
+<button onclick="console.log(f(-5))">f(-5)</button>
+<button onclick="alert(ask())">f(0)</button>
+</body>
+
+</html>

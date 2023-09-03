@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  
+  
+  body{
+    background-color:black;
+    color:fuchsia;
+    
+    ;
+  }
+  img{
+    height:50px;
+  }
+  </style>
+  <script src="library.js"></script>
+  <script>
+  function roll() {
+   
+    let val = getValue("text");
+    change("disp", "")
+    for( i = 1; i <=val; i = i+1){
+      let file = Math.floor(Math.random()*6)+1
+  add("disp","<img src='die"+file+".png'>")
+     //document.write(Math.floor(Math.random()*6)+1)
+      //document.write("<br>")
+    
+    }
+  }
+  </script>
+</head>
+
+<body>
+how many dice do you want to roll:
+<select id =text>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+    <option>5</option>
+      <option>6</option>
+</select>
+<input type="button" value="ROLLL" onclick="roll()">
+
+<div id=disp></div>
+</body>
+
+</html>

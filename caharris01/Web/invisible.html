@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  #container{
+    margin-left:200px;
+  }
+  </style>
+  <script src="library.js">
+  </script>
+  <script>
+    function fun(){
+      var c = getCSS("fez", "visibility")
+  console.log(c)
+  if (c == "visible"){
+  setCSS ("fez", "visibility", "hidden");
+  setCSS("body" , "background-color", "blue");
+  setCSS("body" , "background-image", "url('nihar.png')");
+  setCSS("body" , "background-size", "cover");
+    }
+    else{
+      setCSS ("fez", "visibility", "visible");
+      setCSS("body" , "background-color", "fuchsia");
+      setCSS("body" , "background-image", "");
+    }}
+    
+  </script>
+</head>
+
+<body id=body>
+<div id="container">
+<img id="fez" style="visibility:visible" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Fez.jpg/330px-Fez.jpg" alt="Fez">
+</div>
+<div id="buttons">
+<button onclick="fun()">Click to make hat appear/disappear</button>
+</div>
+</body>
+
+</html>

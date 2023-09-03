@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+
+Our extenstions was making it increase in speed every 5 seconds and to add a block that when collided with moved them to a random part of the playing feild
+
+Their is now a coin which increases the acceleration of the player when collected
+also some other random crap I added because I was bored
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>game day bby</title>
+  <style>
+    #ply1 {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      background-color: red;
+    }
+
+    #ply2 {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      background-color: red;
+    }
+
+    #container {
+      background-color: burlywood;
+      height: 777px;
+      width: 1777px;
+      position: relative;
+      margin-left: 50px;
+      border: 2px fuchsia double;
+    }
+
+    body {
+      user-select: none;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    table {
+      padding-left: 50px;
+      width: 1777px;
+    }
+
+    td {
+      width: 592px;
+    }
+
+    button {
+      width: 100%;
+      background-color: black;
+      color: fuchsia;
+
+      border: 2px fuchsia double;
+    }
+
+    div#barrier {
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background-color: black;
+    }
+    #coin{
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background-color: yellow;
+      border:1px black solid;
+    }
+    div.idf{
+      background-color:black;
+      color:fuchsia;
+      font-size:small;
+      text-align:center;
+    }
+  </style>
+  <script src='library.js'></script>
+  <script>
+    // global variable to keep track of the last key that was pressed
+    var keyply1 = -1;
+    var keyply2 = -1;
+    var tp1 = 1
+    var tp2 = 1
+    var sp1 = 5000
+    var sp2 = 5000
+    var key = -1;
+var cc1 = 0
+var cc2 = 0
+    function keypress() {
+      key = event.keyCode;
+      if (key == 40) {
+        keyply1 = 40
+      }
+      else if (key == 38) {
+        keyply1 = 38
+      }
+      else if (key == 37) {
+        keyply1 = 37
+      }
+      else if (key == 39) {
+        keyply1 = 39
+      }
+
+      else if (key == 87) {
+        keyply2 = 87
+      }
+      else if (key == 83) {
+        keyply2 = 83
+      }
+      else if (key == 65) {
+        keyply2 = 65
+      }
+      else if (key == 68) {
+        keyply2 = 68
+      }
+
+    }
+
+
+
+    function moveply1() {
+      var y = getCSS("ply1", "top");
+      y = parseInt(y);
+      var x = getCSS("ply1", "left");
+      x = parseInt(x)
+      if (collision("ply1", "ply2") == true) {
+        alert("game is over");
+        t = 0
+        y = y + 200
+        x = x + 200
+      }
+      if (collision("ply1", "barrier") == true) {
+        x = 1777 * Math.random()
+        y = 777 * Math.random()
+      }
+      if (collision("ply1", "coin")== true){
+        sp1 = sp1 - 500
+        var x = 1777* Math.random() +"px"
+        var y  = 777*Math.random()+"px"
+        setCSS("coin","left", x)
+        setCSS("coin", "top", y)
+        clearInterval(timerNumsp1)
+        setInterval("addspeedply1()", sp1);
+        console.log("speed of player 1:" +sp1)
+      }
+      if (keyply1 == 40) {
+        y = y + tp1;
+      }
+      else if (keyply1 == 38) {
+        y = y - tp1
+      }
+      else if (keyply1 == 39) {
+        x = x + tp1
+      }
+      else if (keyply1 == 37) {
+        x = x - tp1
+      }
+      if (y < 9) {
+        y = 9
+        keyply1 = 40
+      }
+      if (y > 735) {
+        y = 735
+        keyply1 = 38
+      }
+      if (x < 59) {
+        x = 59
+        keyply1 = 39
+      }
+      if (x > 1785) {
+        x = 1785
+        keyply1 = 37
+      }
+
+      setCSS("ply1", "top", y + "px");
+
+
+
+      setCSS("ply1", "left", x + "px");
+
+    }
+
+    function moveply2() {
+      var y = getCSS("ply2", "top");
+      y = parseInt(y);
+      var x = getCSS("ply2", "left");
+      x = parseInt(x)
+      if (collision("ply2", "barrier") == true) {
+        x = 1777 * Math.random()
+        y = 777 * Math.random()
+      }
+      if (collision("ply2", "coin")== true){
+        sp2 = sp2 - 500
+        var x = 1777* Math.random() +"px"
+        var y  = 777*Math.random()+"px"
+        setCSS("coin","left", x)
+        setCSS("coin", "top", y)
+        clearInterval(timerNumsp2)
+        setInterval("addspeedply2()", sp2);
+        console.log("speed of player 1:"+sp2)
+      }
+      if (keyply2 == 83) {
+        y = y + tp2;
+      }
+      else if (keyply2 == 87) {
+        y = y - tp2
+      }
+      else if (keyply2 == 68) {
+        x = x + tp2
+      }
+      else if (keyply2 == 65) {
+        x = x - tp2
+      }
+      if (y < 9) {
+        y = 9
+        keyply2 = 83
+      }
+      if (y > 735) {
+        y = 735
+        keyply2 = 87
+      }
+      if (x < 59) {
+        x = 59
+        keyply2 = 68
+      }
+      if (x > 1785) {
+        x = 1785
+        keyply2 = 65
+      }
+      setCSS("ply2", "top", y + "px");
+      setCSS("ply2", "left", x + "px");
+
+
+    }
+
+    function yo() {
+      t = 0
+    }
+
+    function speedup() {
+      t = t + 17
+      console.log(t)
+
+    }
+
+    function slowdown() {
+      if (t > 1) {
+        tp1 = tp1 - 1
+        tp2 = tp2 - 1
+        console.log(t)
+        v = 10
+      }
+      else {
+        v = v + 10
+        console.log(v)
+      }
+    }
+
+    function addspeedply1() {
+      tp1 = tp1 + 1
+      console.log(tp1)
+    }
+
+    function addspeedply2() {
+      tp2 = tp2 + 1
+      console.log(tp2)
+    }
+    var timerNum = setInterval("moveply1()", 10);
+    var timerNum = setInterval("moveply2()", 10);
+    var timerNumsp1 = setInterval("addspeedply1()", sp1);
+    var timerNumsp2 = setInterval("addspeedply2()", sp2);
+  </script>
+</head>
+
+<body onkeydown="keypress()">
+  <div id=container>
+    <div id="ply1" style=" top: 300px; left: 1400px;"> <img src="YGNihar.JPG" style=" height:50px; width:50px;" draggable=false alt="nihar"><div Class="idf">Player 1</div></div>
+
+    <div id="ply2" style=" top: 300px; left: 400px;"><img src="MoreNihar.JPG" style=" height:50px; width:50px;" draggable=false alt="nihar again"><div Class="idf" >Player 2</div></div>
+    <div id="barrier" style=" top: 350px; left: 938px;"></div>
+    <div id="coin" style=" top: 50px; left: 1538px;"></div>
+  </div>
+  <table>
+    <tr>
+      <td><button onclick="yo()">STOPPPPPP NIHAR</button></td>
+      <td><button onclick="speedup()">INCREASE SPEED</button></td>
+      <td><button onclick="slowdown()">UNINCREASE SPEED</button></td>
+    </tr>
+    <tr><td>Coins COllected by player 1</td>
+    <td>Coins COllected by player 2</td>
+    <td>HI NIHAR</td></tr>
+  </table>
+  
+</body>
+
+</html>

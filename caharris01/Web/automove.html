@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>auto-move</title>
+  <style>
+    div#block {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      background-color: red;
+    }
+
+    #container {
+      background-color: burlywood;
+      height: 300px;
+      width: 450px;
+      position: relative;
+    }
+    div#barrier {
+      position:absolute;
+      height:25px;
+      width:25px;
+      background-color:black;
+    }
+    div#barrier2 {
+      position:absolute;
+      height:25px;
+      width:25px;
+      background-color:black;
+    }
+    div#barrier3 {
+      position:absolute;
+      height:25px;
+      width:25px;
+      background-color:black;
+    }
+  </style>
+  <script src='library.js'></script>
+  <script>
+    // global variable to keep track of the last key that was pressed
+    var key = -1;
+    var t = 1
+
+    function keys() {
+      // get key code and store in global variable - that's all
+      key = event.keyCode;
+    }
+
+    function move() {
+      var y = getCSS("block", "top");
+      y = parseInt(y);
+      var x = getCSS("block", "left");
+      x = parseInt(x)
+      if(collision("block","barrier")==true){
+        if(key == 40){
+          key= 38;
+        }
+        else if(key == 38){
+          key= 40;
+        }
+        else if(key == 39){
+          key= 37;
+        }
+        else if(key == 37){
+          key= 39;
+        }
+      }
+      if(collision("block","barrier2")==true){
+        x = x +200
+        y = y-300
+       
+      }
+      if(collision("block","barrier3")==true){
+        if(key == 40){
+          key= 38;
+        }
+        else if(key == 38){
+          key= 40;
+        }
+        else if(key == 39){
+          key= 37;
+        }
+        else if(key == 37){
+          key= 39;
+        }
+      }
+      // get the current position
+      
+
+      // check global variable to see which way to move
+      if (key == 40) {
+        y = y + t;
+      }
+      else if (key == 38) {
+        y = y - t
+      }
+      else if (key == 39) {
+        x = x + t
+      }
+      else if (key == 37) {
+        x = x - t
+      }
+      // update to new location
+      if (y < 0) {
+        y = 0
+        key = 40
+      }
+      if (y > 250) {
+        y = 250
+        key = 38
+      }
+      if (x < 0) {
+        x = 0
+        key = 39
+      }
+      if (x > 400) {
+        x = 400
+        key = 37
+      }
+      setCSS("block", "top", y + "px");
+
+
+
+      setCSS("block", "left", x + "px");
+
+    }
+    
+
+    function yo() {
+      t = 0
+    }
+    function speedup(){
+    t = t+1
+      console.log(t)
+      
+    }
+    function slowdown(){
+      if(t >1){
+        t = t-1
+        console.log(t)
+        v = 10
+      }else{
+        v =v+10
+        console.log(v)
+      }
+    }
+    var timerNum = setInterval("move()", 10);
+  </script>
+</head>
+
+<body onkeydown="keys()">
+  <div id=container>Press an arrow key to move the object
+  <div id="block" style=" top: 100px; left: 100px;">Hi!</div>
+   <div id="barrier" style=" top: 250px; left: 200px;"></div>
+   <div id="barrier2" style=" top: 100px; left: 200px;"></div>
+   <div id="barrier3" style=" top: 200px; left: 100px;"></div></div>
+  <button onclick="yo()">STOPPPPPP NIHAR</button>
+   <button onclick="speedup()">INCREASE SPEED</button>
+  <button onclick="slowdown()">UNINCREASE SPEED</button>
+</body>
+
+</html>
